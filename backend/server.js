@@ -10,15 +10,7 @@ const blogRoutes = require("./routes/blogs");
 const app = express();
 
 // Middleware
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
-  })
-);
-app.options("*", cors()); // Support preflight requests
-
+app.use(cors());
 app.use(express.json());
 
 // Routes
